@@ -3,7 +3,13 @@ function Main() {
 	return (
 		<div>
 			<h1>Welcome to my personal webpage, built with react and mongodb!</h1>
-			<img src='./me.jpg' alt='me' className='card-img-top' />
+			<img
+				src='./me.jpg'
+				alt='me'
+				className='card-img-top'
+				height={200}
+				style={{borderRadius: '50%'}}
+			/>
 		</div>
 	);
 }
