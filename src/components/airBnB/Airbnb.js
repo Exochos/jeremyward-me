@@ -37,8 +37,9 @@ function Airbnb() {
 
 	// Fetch data from the server
 	async function getAirbnb() {
-		fetch(
-			'http://localhost:4000/findOne?property_type=' + propertyType +	'&bedrooms=' + bedrooms + '&beds=' + beds)
+		// eslint-disable-next-line max-len
+		const url = 'http://localhost:4000/findOne?property_type=' + propertyType + '&bedrooms=' + bedrooms + '&beds=' + beds;
+		fetch(url)
 			.then(response => response.json())
 			.then(data => {
 				setReturnedValue(data);
@@ -49,7 +50,7 @@ function Airbnb() {
 
 	return (
 		<React.Fragment>
-			<container className='airbnb'>
+			<div className='airbnb'>
 				<img
 					src='https://static.dezeen.com/uploads/2014/07/Airbnb-rebrand-by-DesignStudio_dezeen_468_8.jpg'
 					alt='Airbnb Logo'
@@ -67,7 +68,7 @@ function Airbnb() {
 						className='airB'
 						onClick={handlePropertyType}
 					>
-						{propertyTypes.map(propertyType, index => (
+						{propertyTypes.map((propertyType, index) => (
 							<option key={index} value={propertyType}>
 								{propertyType}
 							</option>
@@ -121,7 +122,7 @@ function Airbnb() {
 						<p className='airB'>Beds: {returnedValue.beds}</p>
 					</div>
 				)}
-			</container>
+			</div>
 		</React.Fragment>
 	);
 }

@@ -1,8 +1,13 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './card.css';
-// Iimport NavBar from './navbar/navbar.js';
+
 function Card(props) {
 	return <div className='card'>{props.children}</div>;
 }
+
+Card.propTypes = {
+	children: PropTypes.node.isRequired,
+};
 
 export default Card;
