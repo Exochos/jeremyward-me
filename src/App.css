@@ -4,10 +4,10 @@ body {
 	height: 100vh;
 	display: grid;
 	place-items: center;
-   font-family: 'Roboto Thin', sans-serif;
+   font-family: 'Tilt Neon', cursive;
 }
 a {
   text-decoration: none;
   color: #000;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Tilt Neon', cursive;
 }
