@@ -7,7 +7,7 @@ function Main() {
 				src='./me.jpg'
 				alt='me'
 				className='card-img-top'
-				height={200}
+				height={600}
 				style={{borderRadius: '50%'}}
 			/>
 		</div>
