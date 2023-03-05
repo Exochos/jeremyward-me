@@ -32,13 +32,28 @@ export default function DogApi() {
 		<React.Fragment>
 			<container style={styles.container}>
 				<span className='title'>Dog Fact Generator</span>
-				<button className='button' onClick={handleClick}>Click Me for a new fact!</button>
+				<button className='button' onClick={handleClick}>
+					Click Me for a new fact!
+				</button>
 				<p className='facts'>{returnedValue && returnedValue.facts[0]}</p>
-				<p className='linkedIn'>This project was created by
-					<a href='https://www.linkedin.com/in/jeremycward/'>Jeremy Ward</a><br/>
-      Source code can be found <a href='https://github.com'>github.com</a></p>
+				<p className='linkedIn'>
+					This project was created by:{' '}
+					<a
+						href='https://www.linkedin.com/in/jeremycward/'
+						style={{color: 'blue'}}
+					>
+						Jeremy Ward
+					</a>
+					<br />
+					Source code can be found{' '}
+					<a
+						href='https://github.com/Exochos/jeremyward-me/tree/master/src/components/dogFacts'
+						style={{color: 'blue'}}
+					>
+						https://github.com/Exochos/jeremyward-me/tree/master/src/components/dogFacts
+					</a>
+				</p>
 			</container>
 		</React.Fragment>
 	);
 }
-

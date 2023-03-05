@@ -5,6 +5,7 @@ import Card from './components/card/card.js';
 import DogFact from './components/dogFacts/DogFact.js';
 import Airbnb from './components/airBnB/Airbnb.js';
 import NavBar from './components/navBar/navBar.js';
+import Main from './components/main/main.js';
 
 function App() {
 	return (
@@ -13,20 +14,9 @@ function App() {
 				<NavBar />
 				<Card>
 					<Routes>
-						<Route
-							path='/'
-							element={
-								<div>
-									<h1>
-										Welcome to my personal webpage, built with react and
-										mongodb!
-									</h1>
-									<img src='./me.jpg' alt='me' className='card-img-top' />
-								</div>
-							}
-						/>
-						<Route path='/dog-fact' element={<DogFact />} />
-						<Route path='/airbnb' element={<Airbnb />} />
+						<Route path='/'	element={<Main/>} />
+						<Route path='/dog-fact' element={<DogFact/>} />
+						<Route path='/airbnb' element={<Airbnb/>} />
 					</Routes>
 				</Card>
 			</div>

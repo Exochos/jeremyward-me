@@ -1,22 +1,14 @@
 // Import React and useState and styles
-import React, {useEffect, useState} from 'react';
-import {useLocation} from 'react-router-dom';
+import React, {useState} from 'react';
 import './Airbnb.css';
 
 // Airbnb component
 function Airbnb() {
-	const location = useLocation();
 	const [returnedValue, setReturnedValue] = useState(null);
 	const [propertyType, setPropertyType] = useState('Apartment');
 	const [bedrooms, setBedrooms] = useState(1);
 	const [beds, setBeds] = useState(1);
 	const propertyTypes = ['Apartment', 'House', 'Condo', 'Townhouse', 'Loft'];
-
-	useEffect(() => {
-		if (location.pathname === '/airbnb') {
-			import('./Airbnb.css');
-		}
-	}, [location]);
 
 	// Utility functions
 	function handlePropertyType(event) {
@@ -55,8 +47,6 @@ function Airbnb() {
 					src='https://static.dezeen.com/uploads/2014/07/Airbnb-rebrand-by-DesignStudio_dezeen_468_8.jpg'
 					alt='Airbnb Logo'
 					className='airB'
-					height={200}
-					width={200}
 				/>
 				<div>
 					<label htmlFor='property-type' className='airB'>

@@ -11,12 +11,3 @@
   margin: 0 0 1rem;
   padding: 1rem;
 }
-img {
-  position: relative;
-  left: 1em;
-  top: -1em;
-  width: 10vh;
-  border-radius: 50%;
-  border: 2em solid #ddd;
-  float: left;
-}
