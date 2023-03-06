@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 // Import React and useState and styles
 import React, {useState} from 'react';
 import './Airbnb.css';
@@ -29,7 +30,6 @@ function Airbnb() {
 
 	// Fetch data from the server
 	async function getAirbnb() {
-		// eslint-disable-next-line max-len
 		const url = 'http://localhost:4000/findOne?property_type=' + propertyType + '&bedrooms=' + bedrooms + '&beds=' + beds;
 		fetch(url)
 			.then(response => response.json())
