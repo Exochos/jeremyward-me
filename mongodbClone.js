@@ -32,29 +32,30 @@ MongoClient.connect(uri, {useUnifiedTopology: true})
 	});
 
 // Define a utility function to fetch a single JSON document from MongoDB
+// eslint-disable-next-line require-jsdoc
 async function findOne(collection, filter, projection) {
-	const {db} = app.locals;
+	const db = app.locals.db;
 	const collectionName = db.collection(collection);
 	const cursor = await collectionName.find(filter, projection).limit(1);
 	const result = await cursor.toArray();
-	return result.length > 0 ? JSON.parse(JSON.stringify(result[0])) : null;
+	return JSON.parse(JSON.stringify(result[0]));
 }
 
 // Define the route and query parameters
 app.get('/findOne', async (req, res) => {
 	const propertyType = req.query.property_type || 'Apartment';
-	const bedrooms = parseInt(req.query.bedrooms, 10) || 1;
-	const beds = parseInt(req.query.beds, 10) || 1;
+	const bedrooms = parseInt(req.query.bedrooms) || 1;
+	const beds = parseInt(req.query.beds) || 1;
 
 	// Define the filter and projection
 	const filter = {
-		propertyType,
+		property_type: propertyType,
 		bedrooms: {$gte: bedrooms},
 		beds: {$gte: beds},
 	};
 	const projection = {
 		_id: 1,
-		listingUrl: 1,
+		listing_url: 1,
 		name: 1,
 		summary: 1,
 		host: 0,
@@ -65,10 +66,10 @@ app.get('/findOne', async (req, res) => {
 		const result = await findOne(collection, filter, projection);
 		const filteredResult = {
 			_id: result._id,
-			listingUrl: result.listing_url,
+			listing_url: result.listing_url,
 			name: result.name,
 			summary: result.summary,
-			propertyType: result.property_type,
+			property_type: result.property_type,
 			bedrooms: result.bedrooms,
 			beds: result.beds,
 		};
