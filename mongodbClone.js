@@ -32,13 +32,12 @@ MongoClient.connect(uri, {useUnifiedTopology: true})
 	});
 
 // Define a utility function to fetch a single JSON document from MongoDB
-// eslint-disable-next-line require-jsdoc
 async function findOne(collection, filter, projection) {
 	const {db} = app.locals;
 	const collectionName = db.collection(collection);
 	const cursor = await collectionName.find(filter, projection).limit(1);
 	const result = await cursor.toArray();
-	return JSON.parse(JSON.stringify(result[0]));
+	return result.length > 0 ? JSON.parse(JSON.stringify(result[0])) : null;
 }
 
 // Define the route and query parameters
