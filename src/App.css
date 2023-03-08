@@ -11,3 +11,15 @@ a {
   color: #000;
   font-family: 'Tilt Neon', cursive;
 }
+.expanded {
+  animation: expand 0.5s forwards;
+}
+
+@keyframes expand {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

@@ -43,3 +43,32 @@
   color: #fff;
   background-color: rgba(225, 225, 225, 0.4);
 }
+
+.nav.expanded {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  z-index: 1;
+}
+
+.nav.expanded .navItem {
+  display: block;
+  margin: 1rem;
+  text-align: center;
+}
+
+.nav.expanded .navItem a {
+  font-size: 2rem;
+  color: black;
+  text-decoration: none;
+}
+
+.nav.expanded .active-tab {
+  font-weight: bold;
+  color: #3a3a3a;
+}
+
+
