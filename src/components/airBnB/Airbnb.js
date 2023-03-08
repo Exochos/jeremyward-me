@@ -48,15 +48,18 @@ function Airbnb() {
 	return (
 		<React.Fragment>
 			<div className='airbnb'>
-				<img
-					src='https://cdn.iconscout.com/icon/free/png-256/airbnb-2752253-2285070.png'
-					alt='Airbnb Logo'
-					className='airB'
-					style={{width: '4em', height: '4em'}}
-				/>
 				<div>
 					<table>
 						<tbody>
+							<tr>
+								<img
+									src='https://cdn.iconscout.com/icon/free/png-256/airbnb-2752253-2285070.png'
+									alt='Airbnb Logo'
+									className='airB'
+									style={{width: '4em', height: '4em'}}
+								/>
+							</tr>
+
 							<tr>
 								<th htmlFor='property-type' className='airB'>
 									Property Type:
