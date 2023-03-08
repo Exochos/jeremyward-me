@@ -56,8 +56,7 @@ function Airbnb() {
 					style={{width: '100px', height: '100px'}}
 				/>
 				<div>
-					<label htmlFor='property-type' className='airB'>
-					</label>
+					<label htmlFor='property-type' className='airB'></label>
 					<select
 						id='property-type'
 						name='property-type'
@@ -107,7 +106,7 @@ function Airbnb() {
 					<div className='airBnBreturned'>
 						<p className='airB'>
 							Listing URL:{' '}
-							<a href={returnedValue.listing_url}>
+							<a href={returnedValue.listing_url} style={{color: '#fc5a60'}}>
 								{returnedValue.listing_url}
 							</a>
 						</p>
