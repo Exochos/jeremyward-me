@@ -1,4 +1,3 @@
-
 // Import React and useState and styles
 // Test
 import React, {useState} from 'react';
@@ -31,13 +30,7 @@ function Airbnb() {
 
 	// Fetch data from the server
 	async function getAirbnb() {
-		const url
-			= 'https://159.223.203.135:4000/findOne?property_type='
-			+ propertyType
-			+ '&bedrooms='
-			+ bedrooms
-			+ '&beds='
-			+ beds;
+		const url =	'/findOne?property_type=' + propertyType + '&bedrooms=' + bedrooms + '&beds=' +	beds;
 		fetch(url)
 			.then(response => response.json())
 			.then(data => {
