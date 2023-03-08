@@ -30,7 +30,13 @@ function Airbnb() {
 
 	// Fetch data from the server
 	async function getAirbnb() {
-		const url =	'/findOne?property_type=' + propertyType + '&bedrooms=' + bedrooms + '&beds=' +	beds;
+		const url
+			= '/findOne?property_type='
+			+ propertyType
+			+ '&bedrooms='
+			+ bedrooms
+			+ '&beds='
+			+ beds;
 		fetch(url)
 			.then(response => response.json())
 			.then(data => {
@@ -44,13 +50,13 @@ function Airbnb() {
 		<React.Fragment>
 			<div className='airbnb'>
 				<img
-					src='https://static.dezeen.com/uploads/2014/07/Airbnb-rebrand-by-DesignStudio_dezeen_468_8.jpg'
+					src='https://cdn.iconscout.com/icon/free/png-256/airbnb-2752253-2285070.png'
 					alt='Airbnb Logo'
 					className='airB'
+					style={{width: '100px', height: '100px'}}
 				/>
 				<div>
 					<label htmlFor='property-type' className='airB'>
-						Property type:{' '}
 					</label>
 					<select
 						id='property-type'
