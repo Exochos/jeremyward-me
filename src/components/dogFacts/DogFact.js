@@ -28,6 +28,15 @@ export default function DogApi() {
 		getData();
 	}
 
+	/*
+						Source code can be found{' '}
+					<a
+						href='https://github.com/Exochos/jeremyward-me/tree/master/src/components/dogFacts'
+						style={{color: 'blue'}}
+					>
+						https://github.com/Exochos/jeremyward-me/tree/master/src/components/dogFacts
+					</a>
+					*/
 	return (
 		<React.Fragment>
 			<container style={styles.container}>
@@ -45,13 +54,6 @@ export default function DogApi() {
 						Jeremy Ward
 					</a>
 					<br />
-					Source code can be found{' '}
-					<a
-						href='https://github.com/Exochos/jeremyward-me/tree/master/src/components/dogFacts'
-						style={{color: 'blue'}}
-					>
-						https://github.com/Exochos/jeremyward-me/tree/master/src/components/dogFacts
-					</a>
 				</p>
 			</container>
 		</React.Fragment>
