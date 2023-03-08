@@ -41,7 +41,6 @@ function Airbnb() {
 			.then(response => response.json())
 			.then(data => {
 				setReturnedValue(data);
-				console.log(data);
 			})
 			.catch(error => console.error(error));
 	}
@@ -53,51 +52,70 @@ function Airbnb() {
 					src='https://cdn.iconscout.com/icon/free/png-256/airbnb-2752253-2285070.png'
 					alt='Airbnb Logo'
 					className='airB'
-					style={{width: '100px', height: '100px'}}
+					style={{width: '4em', height: '4em'}}
 				/>
 				<div>
-					<label htmlFor='property-type' className='airB'></label>
-					<select
-						id='property-type'
-						name='property-type'
-						className='airB'
-						onClick={handlePropertyType}
-					>
-						{propertyTypes.map((propertyType, index) => (
-							<option key={index} value={propertyType}>
-								{propertyType}
-							</option>
-						))}
-					</select>
-					<br />
-					<label htmlFor='bedrooms' className='airB'>
-						{' '}
-						Bedrooms:{' '}
-					</label>
-					<select
-						id='bedrooms'
-						name='bedrooms'
-						className='airB'
-						onClick={handleBedrooms}
-					>
-						<option value='1'>1</option>
-						<option value='2'>2</option>
-						<option value='3'>3</option>
-						<option value='4'>4</option>
-						<option value='5'>5+</option>
-					</select>
-					<br />
-					<label htmlFor='beds' className='airB'>
-						{' '}
-						Beds:{' '}
-					</label>
-					<select id='beds' name='beds' className='airB' onClick={handleBeds}>
-						<option value='1'>1</option>
-						<option value='2'>2</option>
-						<option value='3'>3</option>
-						<option value='4'>4</option>
-						<option value='5'>5</option>
-					</select>
+					<table>
+						<tbody>
+							<tr>
+								<th htmlFor='property-type' className='airB'>
+									Property Type:
+								</th>
+								<td>
+									<select
+										id='property-type'
+										name='property-type'
+										className='airB'
+										onClick={handlePropertyType}
+									>
+										{propertyTypes.map((propertyType, index) => (
+											<option key={index} value={propertyType}>
+												{propertyType}
+											</option>
+										))}
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<th htmlFor='bedrooms' className='airB'>
+									Bedrooms:
+								</th>
+								<td>
+									<select
+										id='bedrooms'
+										name='bedrooms'
+										className='airB'
+										onClick={handleBedrooms}
+									>
+										<option value='1'>1</option>
+										<option value='2'>2</option>
+										<option value='3'>3</option>
+										<option value='4'>4</option>
+										<option value='5'>5+</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<th htmlFor='beds' className='airB'>
+									Beds:
+								</th>
+								<td>
+									<select
+										id='beds'
+										name='beds'
+										className='airB'
+										onClick={handleBeds}
+									>
+										<option value='1'>1</option>
+										<option value='2'>2</option>
+										<option value='3'>3</option>
+										<option value='4'>4</option>
+										<option value='5'>5</option>
+									</select>
+								</td>
+							</tr>
+						</tbody>
+					</table>
 				</div>
 				<button className='airB' onClick={handleSubmit}>
 					Search
