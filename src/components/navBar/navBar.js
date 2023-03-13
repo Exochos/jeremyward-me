@@ -21,6 +21,11 @@ function NavBar() {
 						Airbnb
 					</NavLink>
 				</div>
+				<div className='navItem'>
+					<NavLink to='/search-pages' activeClassName='active-tab'>
+						Search Pages
+					</NavLink>
+				</div>
 			</nav>
 		</div>
 	);

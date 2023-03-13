@@ -1,5 +1,3 @@
-// Import React and useState and styles
-// Test
 import React, {useState} from 'react';
 import './Airbnb.css';
 
