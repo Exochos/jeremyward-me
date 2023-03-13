@@ -1,4 +1,4 @@
-async function getWeather(xCord, yCord) {
+async function getWeather(st) {
 	try {
 		const requestOptions = {
 			method: 'POST',
@@ -7,12 +7,12 @@ async function getWeather(xCord, yCord) {
 				'Content-Type': 'application/json',
 			},
 			body: JSON.stringify({
-				collection: 'weather',
-				database: 'data',
+				collection: 'data',
+				database: 'sample_weatherdata',
 				dataSource: 'Cluster0',
 				filter: {
-					'position.coordinates.0': xCord,
-					'position.coordinates.1': yCord,
+					// eslint-disable-next-line object-shorthand
+					st: st,
 				},
 				projection: {
 					_id: 1,
