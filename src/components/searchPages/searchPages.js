@@ -11,6 +11,7 @@ import {FormControl} from 'react-bootstrap';
 import {Card} from 'react-bootstrap';
 import getRestaurants from './getRestaurantAPI.js';
 import getMflix from './getMflixApi.js';
+import getWeather from './getWeatherAPI.js';
 import 'bootstrap/dist/css/bootstrap.css';
 
 function SearchPages() {
@@ -20,7 +21,8 @@ function SearchPages() {
 	const [returnedWeatherValue, setReturnedWeatherValue] = useState([]);
 	const [restaurantName, setRestaurantName] = useState(null);
 	const [movieName, setMovieName] = useState(null);
-	const [ ]
+	const [xCord, setXcord] = useState(null);
+	const [yCord, setYcord] = useState(null);
 
 	const handleNavClick = page => {
 		setWhichPage(page);
@@ -46,7 +48,15 @@ function SearchPages() {
 		}
 	};
 
-	const handleWeatherSearch = () => {};
+	const handleWeatherSearch = () => {
+		if (xCord && yCord) {
+			getWeather(xCord, yCord)
+				.then(data => {
+					setReturnedWeatherValue(data);
+				})
+				.catch(error => console.error(error));
+		}
+	};
 
 	return (
 		<Tabs defaultActiveKey='restaurants' id='uncontrolled-tab-example'>
@@ -157,6 +167,16 @@ function SearchPages() {
 										Search
 									</Button>
 								</Form>
+								<p>
+									<br />
+									<i>Some example searches: </i>
+									<br />
+									The Godfather
+									<br />
+									The Shawshank Redemption
+									<br />
+									The Dark Knight
+								</p>
 							</div>
 						</Card>
 					</div>
@@ -210,6 +230,13 @@ function SearchPages() {
 										onChange={e => setXcord(e.target.value)}
 									/>
 									<br />
+									<FormControl
+										type='text'
+										placeholder='y coordinate'
+										className='mr-sm-2'
+										onChange={e => setYcord(e.target.value)}
+									/>
+									<br />
 									<Button
 										variant='outline-success'
 										className='ml-auto'
@@ -222,6 +249,32 @@ function SearchPages() {
 							</div>
 						</Card>
 					</div>
+
+					<div className='weather__search' style={{flexGrow: 1}}></div>
+					{returnedWeatherValue && (
+						<Card style={{width: '40em', margin: '1em'}}>
+							<div className='weather__results'>
+								<Card.Title>Weather results: </Card.Title>
+								{returnedWeatherValue.map((weather, index) => (
+									<div key={index}>
+										<br />
+										<Card.Subtitle>
+											<b>Temperature:</b> {weather.temp}
+										</Card.Subtitle>
+										<Card.Text>
+											<b>Wind Speed:</b> {weather.windSpeed}
+											<br />
+											<b>Wind Direction:</b> {weather.windDirection}
+											<br />
+											<b>Humidity:</b> {weather.humidity}
+											<br />
+											<b>Pressure:</b> {weather.pressure}
+										</Card.Text>
+									</div>
+								))}
+							</div>
+						</Card>
+					)}
 				</div>
 			</Tab>
 		</Tabs>

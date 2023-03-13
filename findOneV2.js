@@ -19,7 +19,7 @@ app.set('json spaces', 4);
 app.post('/findOne', async (req, res) => {
 	express.json()(req, res, async () => {
 		const {database, collection, filter, projection} = req.body;
-
+		console.log(req.body);
 		// Check for required parameters
 		if (!database || !collection || !filter || !projection) {
 			res.status(400).send('Missing required parameters');
@@ -30,6 +30,7 @@ app.post('/findOne', async (req, res) => {
 		try {
 			const client = await MongoClient.connect(URI, {useUnifiedTopology: true});
 			const db = client.db(database);
+			console.log(db);
 			const result = await db
 				.collection(collection)
 				.find(filter, projection)
